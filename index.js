@@ -6,8 +6,9 @@ const image=document.querySelector(".pic");
 async function weatherapp(city) {
     
     const response=await fetch(apiUrl+city+`&appid=${apiKey}`);
+    searchBox.value="";
     if(response.status== 404)
-    {
+    {    
         document.querySelector(".weather").style.display="none";
         document.querySelector(".details").style.display="none";
         document.querySelector(".error").style.display="block";
